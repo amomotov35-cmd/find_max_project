@@ -1,5 +1,6 @@
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static Integer findMaximum(List<Integer> numbers) {
@@ -17,8 +18,35 @@ public class Main {
     }
     
     public static void main(String[] args) {
-        List<Integer> numbers = Arrays.asList(5, 2, 8, 1, 9, 3);
-        Integer result = findMaximum(numbers);
-        System.out.println("Максимальное значение: " + result);
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("=== Программа поиска максимума ===");
+        System.out.print("Введите количество элементов: ");
+        int count = scanner.nextInt();
+        
+        if (count <= 0) {
+            System.out.println("Количество элементов должно быть больше 0!");
+            scanner.close();
+            return;
+        }
+        
+        List<Integer> numbers = new ArrayList<>();
+        System.out.println("Введите " + count + " чисел:");
+        
+        for (int i = 0; i < count; i++) {
+            System.out.print("Элемент " + (i + 1) + ": ");
+            numbers.add(scanner.nextInt());
+        }
+        
+        Integer maxValue = findMaximum(numbers);
+        
+        if (maxValue != null) {
+            System.out.println("\nВведенные числа: " + numbers);
+            System.out.println("Максимальное значение: " + maxValue);
+        } else {
+            System.out.println("Не удалось найти максимальное значение.");
+        }
+        
+        scanner.close();
     }
 }
