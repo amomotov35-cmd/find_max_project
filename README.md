@@ -1,19 +1,10 @@
-# Project Max Finder 
+# Project Min Finder 
  
+# Project Min Finder
+
 ## Описание
-Проект для нахождения максимального значения в списке чисел.
+Проект для нахождения минимального значения в списке чисел.
 
-## Метод findMaximum
-
- ### Сигнатура
- \`\`\`java
- public static Integer findMaximum(List<Integer> numbers) 
- \`\`\` 
- ### Параметры
-
- - \`numbers\`: список целых чисел типа \`List<Integer>\`
-
- ### Возвращаемое значение
-
- - Максимальное значение из списка (тип \`Integer\`)
- - \`null\`, если список пуст или равен \`null\`
+## Метод findMinimum
+```java
+public static Integer findMinimum(List<Integer> numbers)
